@@ -1,30 +1,28 @@
-package com.example.eventBus.controller;
+package com.example.eventBus.orders.controller;
 
-import com.example.eventBus.command.CreateOrderCommand;
-import com.example.eventBus.model.Order;
-import com.example.eventBus.service.OrderService;
-import lombok.Getter;
+import com.example.eventBus.orders.command.CreateOrderCommand;
+import com.example.eventBus.orders.model.Order;
+import com.example.eventBus.orders.service.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController()
+@RestController
 @RequestMapping("/orders")
 public class Orders {
-    private  final OrderService orderService;
+    private final OrderService orderService;
 
-    public Orders(OrderService orderService){
-        this.orderService=orderService;
+    public Orders(OrderService orderService) {
+        this.orderService = orderService;
     }
 
     @GetMapping("")
-    public ResponseEntity<List<Order>> getAllOrders(){
+    public ResponseEntity<List<Order>> getAllOrders() {
         List<Order> listOrders = orderService.getAllOrders();
-         return ResponseEntity.status(HttpStatus.OK).body(listOrders);
-     }
-
+        return ResponseEntity.status(HttpStatus.OK).body(listOrders);
+    }
 
     @PostMapping("")
     public ResponseEntity<Order> createOrder(@RequestBody CreateOrderCommand command) {

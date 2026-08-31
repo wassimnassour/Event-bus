@@ -1,4 +1,4 @@
-package com.example.eventBus.model;
+package com.example.eventBus.orders.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
