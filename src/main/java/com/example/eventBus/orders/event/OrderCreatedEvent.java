@@ -1,4 +1,4 @@
-package com.example.eventBus.event;
+package com.example.eventBus.orders.event;
 
 import java.time.Instant;
 

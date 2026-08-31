@@ -1,3 +1,3 @@
-package com.example.eventBus.command;
+package com.example.eventBus.orders.command;
 
 public record CreateOrderCommand(String item, int quantity) {}
