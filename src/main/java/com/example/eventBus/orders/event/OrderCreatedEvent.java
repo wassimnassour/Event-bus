@@ -20,7 +20,7 @@ public record OrderCreatedEvent(Long orderId, String item, int quantity,Instant 
         return null;
     }
 
-    public static OrderCreatedEvent now (Long orderId, String item, int quantity, Instant occurredAt){
+    public static OrderCreatedEvent now (Long orderId, String item, int quantity){
         return new OrderCreatedEvent(orderId , item, quantity , Instant.now());
     }
 }
