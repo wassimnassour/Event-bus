@@ -31,8 +31,8 @@ public class Orders {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdOrder);
     }
     @PostMapping("/cancel")
-    public ResponseEntity<?> CancelOrder(@RequestParam OrderCanceledCommand orderId){
-          orderService.cancelOrder(orderId);
-          return ResponseEntity.noContent().build();
+    public ResponseEntity<Void> cancelOrder(@RequestBody OrderCanceledCommand command) {
+        orderService.cancelOrder(command);
+        return ResponseEntity.noContent().build();
     }
 }
